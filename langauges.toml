@@ -16,3 +16,13 @@ chainingHints = { enable = false }
 [[language]]
 name = "rust"
 language-servers = ["rust-analyzer"]
+
+[[language]]
+name = "cpp"
+indent = { tab-width = 4, unit = "\t" }
+file-types = ["cpp", "h"]
+
+[[language]]
+name = "golang"
+indent = { tab-width = 4, unit = "    "}
+file-types = ["go"]
