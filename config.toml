@@ -8,6 +8,11 @@ scrolloff = 8
 cursorline = true
 color-modes = true
 true-color = true
+auto-pairs = true
+# rainbow-brackets = true
+
+[editor.file-picker]
+hidden = false
 
 [editor.whitespace]
 render = 'none'
@@ -47,6 +52,13 @@ x = "extend_line"
 D = ["ensure_selections_forward", "extend_to_line_end"]
 X = ["goto_first_nonwhitespace", "extend_to_line_end"]
 "'" = "goto_word"
+"*" = ["move_char_right", "move_prev_word_start", "move_next_word_end", "search_selection", "search_next"]
+
+[keys.normal.space.z]
+c = ":clipboard-yank"
+l = ":log-open"
+p = ":sh echo \"%{buffer_name}\" | pbcopy"
+r = ":reload"
 
 [keys.select]
 ";" = ["collapse_selection", "normal_mode"]
@@ -56,6 +68,7 @@ C-h = ['move_char_left']
 C-l = ['move_char_right']
 C-j = ['move_line_down']
 C-k = ['move_line_up']
+esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
 
 [keys.normal.space]
 c = ':buffer-close'
@@ -68,5 +81,5 @@ normal = 'block'
 [editor.statusline]
 right = ['version-control', 'diagnostics', 'selections', 'position', 'file-encoding']
 
-[editor.file-picker]
-hidden = false
+[keys.normal.backspace]
+h = ":sh zellij run --close-on-exit -f -x=1%% -y=4%% --width=99%% --height=92%% -- lazygit --filter \"%{buffer_name}\""
